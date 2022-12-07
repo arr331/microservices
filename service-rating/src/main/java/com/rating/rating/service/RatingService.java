@@ -23,4 +23,12 @@ public class RatingService {
         ratingList.add(rating3);
         return ratingList;
     }
+
+    public Rating getByBokkId(int id) {
+        List<Rating> ratingList = new ArrayList<>();
+        ratingList.add(rating1);
+        ratingList.add(rating2);
+        ratingList.add(rating3);
+        return ratingList.get(id -1);
+    }
 }
