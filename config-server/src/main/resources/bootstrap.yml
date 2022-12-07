@@ -5,4 +5,10 @@ spring:
     config:
       server:
         git:
-          uri: 
+          uri: https://github.com/arr331/microservices.git
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+  security:
+    user: root
+    password: s3cr3t
