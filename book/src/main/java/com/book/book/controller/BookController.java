@@ -1,7 +1,6 @@
 package com.book.book.controller;
 
 import com.book.book.model.Book;
-import com.book.book.model.BookInfo;
 import com.book.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,7 @@ public class BookController {
     }
 
     @GetMapping(value = "/{id}")
-    public BookInfo getById(@PathVariable("id") int id) {
+    public Book getById(@PathVariable("id") int id) {
         return bookService.getById(id);
     }
 

@@ -1,4 +1,4 @@
-package com.book.book.model;
+package com.feignclient.feignclient.model;
 
 public class BookInfo {
     private Book book;

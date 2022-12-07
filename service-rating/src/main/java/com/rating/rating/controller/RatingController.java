@@ -24,8 +24,8 @@ public class RatingController {
     }
 
     @GetMapping(value = "/{id}")
-    public Rating getAll(@PathVariable("id") int id) {
-        return ratingService.getByBokkId(id);
+    public Rating getByBookId(@PathVariable("id") int id) {
+        return ratingService.getByBookId(id);
     }
 
     @PostMapping

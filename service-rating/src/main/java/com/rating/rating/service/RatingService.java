@@ -24,7 +24,7 @@ public class RatingService {
         return ratingList;
     }
 
-    public Rating getByBokkId(int id) {
+    public Rating getByBookId(int id) {
         List<Rating> ratingList = new ArrayList<>();
         ratingList.add(rating1);
         ratingList.add(rating2);
