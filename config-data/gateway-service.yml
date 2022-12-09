@@ -14,14 +14,14 @@ spring:
           enabled: true
       routes:
         - id: book-service
-          uri: lb://book-service
+          uri: http://localhost:8092
           predicates:
             - Path=/book/**
         - id: rating-service
-          uri: lb://rating-service
+          uri: http://localhost:8091
           predicates:
             - Path=/rating/**
         - id: client-service
-          uri: lb://client-service
+          uri: http://localhost:8093
           predicates:
             - Path=/client/**

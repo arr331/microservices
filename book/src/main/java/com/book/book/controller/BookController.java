@@ -17,10 +17,10 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping
-    public List<Book> getAll() {
-        return bookService.getAll();
-    }
+//    @GetMapping
+//    public List<Book> getAll() {
+//        return bookService.getAll();
+//    }
 
     @GetMapping(value = "/{id}")
     public Book getById(@PathVariable("id") int id) {
