@@ -1,12 +1,12 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.0.0'
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group = 'com.feign-client'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
 	compileOnly {
@@ -21,18 +21,19 @@ repositories {
 }
 
 ext {
-	set('springCloudVersion', "2022.0.0-RC2")
+	set('springCloudVersion', "Hoxton.SR7")
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-	implementation('org.springframework.cloud:spring-cloud-starter-bootstrap')
+//	implementation('org.springframework.cloud:spring-cloud-starter-bootstrap')
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix', version: '2.2.2.RELEASE'
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
