@@ -1,5 +1,6 @@
 package com.feignclient.feignclient.controller;
 
+import com.feignclient.feignclient.model.Book;
 import com.feignclient.feignclient.model.BookInfo;
 import com.feignclient.feignclient.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,10 @@ public class ClientController {
     @GetMapping(value = "/{id}")
     public BookInfo getById(@PathVariable("id") int id) {
         return clientService.getById(id);
+    }
+
+    private Book defaultGreeting(String username) {
+        Book book = new Book(999,  "None", "None");
+        return book;
     }
 }

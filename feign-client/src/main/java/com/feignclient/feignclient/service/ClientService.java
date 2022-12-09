@@ -6,9 +6,9 @@ import com.feignclient.feignclient.model.Book;
 import com.feignclient.feignclient.model.BookInfo;
 import com.feignclient.feignclient.model.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class ClientService {
     private final BookClient bookClient;
     private final RatingClient ratingClient;
@@ -19,9 +19,19 @@ public class ClientService {
         this.ratingClient = ratingClient;
     }
 
+
     public BookInfo getById(int id) {
-        Book book = bookClient.getById(id);
-        Rating rating = ratingClient.getByBookId(id);
+        Rating rating = getRating(id);
+        Book book = getBook(id);
         return new BookInfo(book, rating);
     }
+
+    private Book getBook(int id) {
+        return bookClient.getById(id);
+    }
+
+    private Rating getRating(int id) {
+        return ratingClient.getByBookId(id);
+    }
+
 }
