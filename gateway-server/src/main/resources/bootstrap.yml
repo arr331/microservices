@@ -1,8 +1,21 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+
 spring:
   application:
     name: gateway-service
-  cloud:
-    config:
-      uri: http://localhost:8081
-      username: root
-      password: s3cr3t
+  security:
+    user:
+      name: arr
+      password: 123
+
+zuul:
+  routes:
+    client:
+      path: /client/**
+      url: http://localhost:8093/client
