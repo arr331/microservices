@@ -15,7 +15,14 @@ spring:
       password: 123
 
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     client:
       path: /client/**
       url: http://localhost:8093/client
+    book:
+      path: /book/**
+      url: http://localhost:8092/book
+    rating:
+      path: /rating/**
+      url: http://localhost:8091/rating

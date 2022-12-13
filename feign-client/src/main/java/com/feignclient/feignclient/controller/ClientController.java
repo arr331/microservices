@@ -24,8 +24,4 @@ public class ClientController {
         return clientService.getById(id);
     }
 
-    private Book defaultGreeting(String username) {
-        Book book = new Book(999,  "None", "None");
-        return book;
-    }
 }
