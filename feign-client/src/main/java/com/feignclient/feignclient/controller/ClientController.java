@@ -1,6 +1,5 @@
 package com.feignclient.feignclient.controller;
 
-import com.feignclient.feignclient.model.Book;
 import com.feignclient.feignclient.model.BookInfo;
 import com.feignclient.feignclient.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
