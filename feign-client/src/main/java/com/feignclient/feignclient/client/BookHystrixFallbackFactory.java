@@ -8,6 +8,6 @@ public class BookHystrixFallbackFactory implements BookClient {
 
     @Override
     public Book getById(int id) {
-        return new Book(999, "Ninguno", "jsajdsad");
+        return new Book(999, "Fallò", "Respuesta del fallback");
     }
 }

@@ -10,9 +10,20 @@ spring:
   application:
     name: gateway-service
   security:
-    user:
-      name: arr
-      password: 123
+    oauth2:
+      client:
+        registration:
+          client-oidc:
+            provider: spring
+            client-id: client-id
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://backend-client:8080/login/oauth2/code/{registrationId}"
+            scope: openid
+            client-name: client-oidc
+        provider:
+          spring:
+            issuer-uri: http://backend-auth:8079
 
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
